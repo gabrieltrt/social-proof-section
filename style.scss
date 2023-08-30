@@ -1,0 +1,169 @@
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+/* Variables Import */
+
+@import 'variables';
+
+/* MY CSS RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  }
+  
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'League Spartan', sans-serif;
+  }
+  
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  }
+  
+input, button, textarea, select {
+  font: inherit;
+  }
+
+  /* LET'S CODE */
+
+main {
+  padding: 5.125rem 1.5rem 6.1875rem 1.5rem;
+  display: grid;
+  justify-items: center;
+  margin: 0 auto;
+  @include desktop {
+  max-width: 1110px;
+  grid-template-columns: auto auto;
+  }
+}
+
+.intro {
+@include desktop {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+}
+
+.intro-content {
+  text-align: center;
+  h1 {
+    font-size: map-get($fonts, m);
+    font-weight: map-get($weights, bold);
+    color: map-get($colors, primary);
+    margin-bottom: 1.0625rem;
+    line-height: 0.8;
+  }
+
+  p {
+    font-size: map-get($fonts, s);
+    font-weight: map-get($weights, medium);
+    color: map-get($colors, secondary);
+    margin-bottom: 2.4375rem;
+    line-height: 1.333;
+  }
+}
+
+.intro-stars {
+  margin-bottom: 3.0625rem;
+  @include desktop {
+    display: grid;
+    grid-template-columns: minmax(auto, 1fr);
+  }
+}
+
+.rating {
+  background-color: #F7F2F7;
+  border-radius: 8px;
+  max-width: 327px;
+  padding: 16px 55px 15px 55px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  @include desktop {
+    flex-direction: row;
+    max-width: 445px;
+    padding: 20px 47px 20px 32px;
+  }
+  .stars {
+    display: flex;
+    gap: 8.45px;
+  }
+  p {
+    color: map-get($colors , primary);
+    font-weight: map-get($weights, bold);
+    font-size: map-get($fonts, xs);
+  }
+  &:nth-child(1),
+  &:nth-child(2) {
+    margin-bottom: 1rem;
+    }
+  }
+
+.reviews-container {
+  color: #FFFFFF;
+  font-size: map-get($fonts, xs);
+  @include desktop {
+    height: 266px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));
+    gap: 30px;
+  }
+  img {
+    border-radius: 50%;
+    max-width: 2.5rem;
+  }
+}
+
+.container {
+  background-color: map-get($colors, primary);
+  max-width: 20.4375rem;
+  border-radius: 8px;
+  padding: 2.5rem 2rem 2.1875rem 2rem;
+  @include desktop {
+    max-width: 350px;
+    max-height: 234px;
+  }
+  p {
+    line-height: 1.33;
+  }
+}
+
+.container:nth-child(1),
+.container:nth-child(2) {
+  margin-bottom: 1rem;
+  @include desktop {
+    margin-bottom: initial;
+  }
+}
+
+.secondReview {
+  align-self: center;
+}
+
+.thirdReview {
+  align-self: end;
+}
+
+.profile {
+  display: flex;
+  gap: 23px;
+  align-items: center;
+  margin-bottom: 1.4375rem;
+  h2 {
+    font-size: map-get($fonts, xs);
+    font-weight: map-get($weights, bold);
+  }
+  span {
+    color: #EE69A4;
+  }
+}
+
+
+
+  

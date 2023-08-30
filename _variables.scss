@@ -1,0 +1,23 @@
+$colors: (
+  primary: #512051,
+  secondary: #927B91,
+  tertiary: #FFFFFF,
+);
+
+$fonts: (
+  xs: 1.0625rem,
+  s: 1.1875rem,
+  m: 2.5rem,
+  l: 3.5rem,
+);
+
+$weights: (
+  medium: 500,
+  bold: 700,
+);
+
+@mixin desktop {
+  @media (min-width: 1000px) {
+    @content
+  }
+};
