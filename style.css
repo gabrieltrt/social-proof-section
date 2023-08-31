@@ -9,8 +9,17 @@
 }
 
 body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   font-family: "League Spartan", sans-serif;
+  background: url(./images/bg-pattern-top-mobile.svg) no-repeat, url(./images/bg-pattern-bottom-mobile.svg) no-repeat bottom right;
+}
+@media (min-width: 1000px) {
+  body {
+    background: url(./images/bg-pattern-top-desktop.svg) no-repeat top left, url(./images/bg-pattern-bottom-desktop.svg) no-repeat bottom right;
+  }
 }
 
 img, picture, video, canvas, svg {
@@ -24,21 +33,22 @@ input, button, textarea, select {
 
 /* LET'S CODE */
 main {
-  padding: 5.125rem 1.5rem 6.1875rem 1.5rem;
-  display: grid;
-  justify-items: center;
-  margin: 0 auto;
+  max-width: 20.4375rem;
+  margin: 5.125rem auto;
 }
 @media (min-width: 1000px) {
   main {
-    max-width: 1110px;
-    grid-template-columns: auto auto;
+    max-width: 69.375rem;
   }
 }
 
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media (min-width: 1000px) {
   .intro {
-    grid-column: 1/-1;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -47,12 +57,25 @@ main {
 .intro-content {
   text-align: center;
 }
+@media (min-width: 1000px) {
+  .intro-content {
+    text-align: left;
+    max-width: 27.8125rem;
+  }
+}
 .intro-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #512051;
   margin-bottom: 1.0625rem;
   line-height: 0.8;
+}
+@media (min-width: 1000px) {
+  .intro-content h1 {
+    text-align: left;
+    font-size: 3.5rem;
+    text-align: left;
+  }
 }
 .intro-content p {
   font-size: 1.1875rem;
@@ -67,17 +90,24 @@ main {
 }
 @media (min-width: 1000px) {
   .intro-stars {
-    display: grid;
-    grid-template-columns: minmax(auto, 1fr);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
+}
+
+.secondRating {
+  align-self: center;
+}
+
+.thirdRating {
+  align-self: flex-end;
 }
 
 .rating {
   background-color: #F7F2F7;
-  border-radius: 8px;
-  max-width: 327px;
-  padding: 16px 55px 15px 55px;
-  margin: 0 auto;
+  border-radius: 0.5rem;
+  padding: 1rem 3.4375rem 0.9375rem 3.4375rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,8 +116,8 @@ main {
 @media (min-width: 1000px) {
   .rating {
     flex-direction: row;
-    max-width: 445px;
-    padding: 20px 47px 20px 32px;
+    padding: 1.25rem 2rem;
+    max-width: 27.8125rem;
   }
 }
 .rating .stars {
@@ -102,25 +132,22 @@ main {
 .rating:nth-child(1), .rating:nth-child(2) {
   margin-bottom: 1rem;
 }
-
-.reviews-container {
-  color: #FFFFFF;
-  font-size: 1.0625rem;
-}
 @media (min-width: 1000px) {
-  .reviews-container {
-    height: 266px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(350px, 1fr));
-    gap: 30px;
+  .rating:nth-child(1), .rating:nth-child(2) {
+    margin-bottom: initial;
   }
 }
-.reviews-container img {
-  border-radius: 50%;
-  max-width: 2.5rem;
+
+@media (min-width: 1000px) {
+  .testimonials {
+    display: flex;
+    gap: 30px;
+    height: 16.625rem;
+  }
 }
 
 .container {
+  color: #FFFFFF;
   background-color: #512051;
   max-width: 20.4375rem;
   border-radius: 8px;
@@ -135,14 +162,11 @@ main {
 .container p {
   line-height: 1.33;
 }
-
-.container:nth-child(1),
-.container:nth-child(2) {
+.container:nth-child(1), .container:nth-child(2) {
   margin-bottom: 1rem;
 }
 @media (min-width: 1000px) {
-  .container:nth-child(1),
-  .container:nth-child(2) {
+  .container:nth-child(1), .container:nth-child(2) {
     margin-bottom: initial;
   }
 }
@@ -157,9 +181,13 @@ main {
 
 .profile {
   display: flex;
-  gap: 23px;
+  gap: 1.4375rem;
   align-items: center;
   margin-bottom: 1.4375rem;
+}
+.profile img {
+  width: 40px;
+  border-radius: 50%;
 }
 .profile h2 {
   font-size: 1.0625rem;
